@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>User Details</title>
+    <style>
+          body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: lightgray;
+        }
+        #form{
+            background-color: antiquewhite;
+            border: 2px solid black;
+            width: 500px;
+            border-radius: 10px;
+            text-align:center ;
+             justify-content: center;
+        } 
+    </style>
+</head>
+
+<body>
+
+    <form  onsubmit="show(); return false; "  id="form"  >
+    <h1>User Details</h1>
+
+        <label>UserName : </label> 
+        <input type="text" id="textbox1"> <br><br>
+
+        <label>Email Id :</label>
+        <input type="email" id="textbox2"><br><br>
+
+        <input type="submit" value="Submit"  > 
+
+        <p id="display"></p>
+
+         <script>
+        function show() {
+                
+              UserName = textbox1.value;
+
+              EmailId=textbox2.value;  
+              
+            document.getElementById("display").innerHTML =
+                "Hello " + UserName + "<br>  Your Email Id is : "+EmailId;
+        }
+    </script>
+    </form>
+
+   
+
+</body>
+</html>

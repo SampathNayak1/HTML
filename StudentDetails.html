@@ -1,0 +1,20 @@
+Student Id : <input type="number" id="sid"> <br><br>
+Student Name : <input type="text" id="sname"> <br><br>
+Student Cource : <input type="text" id="scource"><br><br>
+Student Phone number : <input type="number" id="sphone"><br><br>
+Student Email id : <input type="text" id="semail"> <br><br>
+
+<button onclick="studentDetails()">Student Details</button> <br><br>
+<p id="displayPara" style="background-color: darkgray; color: blue; font-size: 40px;"></p>
+
+<script>
+    function studentDetails(){
+        details=
+             "Student ID : "+sid.value+  "<br> "+ "Student Name : "+sname.value+ "<br>"+ "Student Cource : "+scource.value+ "<br>"+ "Student Phone Number : "+sphone.value+ "<br>"+ "Student Email Id : "+semail.value+ "<br>";
+             
+             document.getElementById("displayPara").innerHTML= "Student Details are : " +details;
+
+    }
+</script>
+
+

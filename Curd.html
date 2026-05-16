@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Operations</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .container{
+            width: 500px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input{
+            width: 95%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        button{
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        table{
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table, th, td{
+            border: 1px solid black;
+        }
+
+        th, td{
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student CRUD Operations</h2>
+
+    <input type="text" id="txtId" placeholder="Enter ID">
+
+    <input type="text" id="txtName" placeholder="Enter Name">
+
+    <input type="number" id="txtAge" placeholder="Enter Age">
+
+    <br>
+
+    <button onclick="insertData()">Insert</button>
+
+    <button onclick="updateData()">Update</button>
+
+    <button onclick="deleteData()">Delete</button>
+
+    <table id="studentTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Edit</th>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+
+    let selectedRow = null;
+
+    function insertData()
+    {
+        let id = document.getElementById("txtId").value;
+        let name = document.getElementById("txtName").value;
+        let age = document.getElementById("txtAge").value;
+
+        let table = document.getElementById("studentTable");
+
+        let row = table.insertRow();
+
+        row.insertCell(0).innerHTML = id;
+        row.insertCell(1).innerHTML = name;
+        row.insertCell(2).innerHTML = age;
+
+        row.insertCell(3).innerHTML =
+        `<button onclick="editData(this)">Edit</button>`;
+
+        clearFields();
+    }
+
+    function editData(btn)
+    {
+        selectedRow = btn.parentElement.parentElement;
+
+        document.getElementById("txtId").value =
+            selectedRow.cells[0].innerHTML;
+
+        document.getElementById("txtName").value =
+            selectedRow.cells[1].innerHTML;
+
+        document.getElementById("txtAge").value =
+            selectedRow.cells[2].innerHTML;
+    }
+
+    function updateData()
+    {
+        if(selectedRow != null)
+        {
+            selectedRow.cells[0].innerHTML =
+                document.getElementById("txtId").value;
+
+            selectedRow.cells[1].innerHTML =
+                document.getElementById("txtName").value;
+
+            selectedRow.cells[2].innerHTML =
+                document.getElementById("txtAge").value;
+
+            clearFields();
+
+            selectedRow = null;
+        }
+    }
+
+    function deleteData()
+    {
+        if(selectedRow != null)
+        {
+            selectedRow.remove();
+
+            clearFields();
+
+            selectedRow = null;
+        }
+        else
+        {
+            alert("Please select a row using Edit button");
+        }
+    }
+
+    function clearFields()
+    {
+        document.getElementById("txtId").value = "";
+        document.getElementById("txtName").value = "";
+        document.getElementById("txtAge").value = "";
+    }
+
+</script>
+
+</body>
+</html>

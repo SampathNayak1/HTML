@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Compare Two Numbers</title>
+    </head>
+    <body style="background-color: antiquewhite;">
+        <h1 style="background-color: aquamarine;"><u>Compare Two Numbers</u></h1>
+        <label style=" color: red;" >Enter First Number : </label>
+        <input type="number" id="num1"><br><br>
+
+        <label  style=" color: red ;">Enter Second Number : </label>
+        <input type="number" id="num2"><br><br>
+
+        <button onclick="Compare()" style="background-color: chartreuse;">Compare</button>
+        <p id="result" style="background-color: aqua;"></p>
+
+        <script>
+            function Compare(){
+                a=num1.value
+                b=num2.value
+
+                if(a>b){
+                    document.getElementById("result").innerHTML=a+" is greater than "+b
+
+                }
+                else{
+                    document.getElementById("result").innerHTML=a+" Lessathan "+b
+                }
+            }
+        </script>
+    </body>
+</html>

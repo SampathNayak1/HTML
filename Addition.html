@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Addition of two numbers  </title>
+    </head>
+    <body style="background-color: rgb(206, 232, 227);">
+        <h1 style="background-color: antiquewhite;"><u>Addition of two numbers</u></h1>
+        <label  style="color: rgb(241, 1, 1);  ">First Number : </label>
+        <input type="text" id="firstnumber"><br><br>
+
+        <label style="color: red;" >Second  Number :</label>
+        <input type="text" id="secondnumber"><br><br>
+        <!-- <input type="submit" value="Addition" onclick="Add()"  style="background-color: aqua;"><br> -->
+         <button onclick="Add()" style="background-color: aqua;" >Addition</button>
+         <button onclick="Sub()" style="background-color: rgb(128, 220, 160);" >Subtraction</button>
+         <button onclick="Mul()" style="background-color: rgb(225, 0, 255);" >Multiplication</button>
+         <button onclick="Div()" style="background-color: rgb(255, 234, 0);" >Division</button>
+
+        <p id="dispaly" style="background-color: blanchedalmond;"></p>
+
+        <script>
+            function Add(){
+                a=parseInt( firstnumber.value  )
+                b=parseInt(secondnumber.value)
+                c=a+b
+                document.getElementById("dispaly").innerHTML="Sum of "+a+" and " +b+ " is : " +c 
+            }
+             function Sub(){
+                a=parseInt( firstnumber.value  )
+                b=parseInt(secondnumber.value)
+                c=a/b
+                document.getElementById("dispaly").innerHTML="Sub of "+a+" and " +b+ " is : " +c 
+            } function Mul(){
+                a=parseInt( firstnumber.value  )
+                b=parseInt(secondnumber.value)
+                c=a*b
+                document.getElementById("dispaly").innerHTML="Mul of "+a+" and " +b+ " is : " +c 
+            } function Div(){
+                a=parseInt( firstnumber.value  )
+                b=parseInt(secondnumber.value)
+                c=a/b
+                document.getElementById("dispaly").innerHTML="Div of "+a+" and " +b+ " is : " +c 
+            }
+
+        </script>
+
+    </body>
+</html>

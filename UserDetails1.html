@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>User Registration Form : </title>
+        <style>
+            body{
+                display: flex;
+            }
+            #form{
+               border: 2px solid black;
+               width: 500px;
+               border-radius: 5px ;
+               padding: 20px; 
+               text-align: center;
+               justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form">
+        <label> <b> FirstName : </b></label>
+        <input type="text" id="firstname"><br><br>
+
+        <label >LastName:</label>
+        <input type="text" id="lastname"><br> <br>
+
+        <!-- <label>Gender</label>
+        <input type="radio" name="gender" value="Male">Male 
+        <input type="radio" name="gender" value="Female">Female     -->
+
+         
+        <button onclick="show()" >Submit</button>
+        <p id="display"></p>
+        <script>
+            function show(){ 
+                prevent
+            FirstName=firstname.value;
+            LastName=lastname.value;
+            // Gender= value
+            document.getElementById("display").innerHTML="FirstName " +FirstName+"<br> LastName"+LastName;
+            }
+        </script>
+
+        </form>
+    </body>
+</html>

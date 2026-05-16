@@ -1,0 +1,31 @@
+Enter First Number : <input type="number" id="num1"><br> <br>
+Enter Second Number : <input type="number" id="num2"><br><br>
+
+<button onclick="addNumber()">Addition</button>
+<button onclick="subNumber()">Substract</button>
+<button onclick="mulNumber()">Multiplication</button>
+<button onclick="diviNumber()">Division </button>
+
+<p id="result" style="background-color: burlywood; color: red; font-family: 'Times New Roman', Times, serif; font-size: 50px;"></p>
+<script>
+
+    function addNumber(){
+        a=parseInt(num1.value)+parseInt(num2.value);
+        document.getElementById( "result").innerHTML="Addition of two number : "+ a;
+    }
+
+    function subNumber(){
+        a=parseInt(num1.value)-parseInt(num2.value);
+        document.getElementById("result").innerHTML="Subraction of two number : " +a;
+    }
+
+    function mulNumber(){
+        a=parseInt(num1.value)*parseInt(num2.value);
+        document.getElementById("result").innerHTML="Multipliction of two number : " +a; 
+    }
+
+    function diviNumber(){
+        a=parseInt(num1.value)/parseInt(num2.value);
+        document.getElementById("result").innerHTML="Division of two number : "+a 
+    }
+</script>
