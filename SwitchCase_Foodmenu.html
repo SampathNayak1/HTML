@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Food Menu</title>
+    </head>
+    <body>
+        <h1><u>Food Menu</u></h1>
+        <label>Choose Item : </label>
+        <select id="menu">
+             <option value="Burger">Burger</option>
+             <option value="Pizza">Pizza</option>
+             <option value="Biryani">Biryani</option>
+        </select><br><br>
+        <button onclick="Menu()">FoodPrice</button>
+        <h1 id="result"></h1>
+
+        <script>
+            function Menu(){
+             item=menu.value
+             
+             switch(item){
+                case "Burger":
+                    document.getElementById("result").innerHTML=item + " Price is 100 "
+                    break;
+                 case "Pizza":
+                     document.getElementById("result").innerHTML=item + " Price is 150 "
+                    break;
+                 case "Biryani":
+                       document.getElementById("result").innerHTML=item + " Price is 200 "
+                    break;
+                default:
+                    document.getElementById("result").innerHTML="Selelct shown items only  "
+                    break;
+             } 
+            }
+        </script>
+    </body>
+</html>

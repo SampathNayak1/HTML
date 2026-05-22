@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>
+            Task 8
+        </title>
+    </head>
+    <body>
+        <h3> accept the marks from the student and display the Grade</h3>
+        <label style="color: red;" >Enter a number : </label>
+        <input type="number" id="num"><br><br>
+
+        <button onclick="Result()" style="background-color: aqua;">Grade %</button>
+        <h2 id="result" style="background-color: bisque;"></h2>
+       
+        <script>
+          function Result(){
+            a=Number(num.value)
+            if(a < 40){
+                document.getElementById("result").innerHTML="Fail"
+            }
+            else if(a >= 40 && a <= 49  ){
+                document.getElementById("result").innerHTML="Just Pass" 
+            }
+            else if(a >= 50 && a <= 59){
+                document.getElementById("result").innerHTML="Grade C" 
+            } 
+            else if(a>=60 && a<=69){
+                document.getElementById("result").innerHTML="Grade C+" 
+            }
+            else if(a>=70 && a<=79){
+                document.getElementById("result").innerHTML="Grade B" 
+            }
+            else if(a>=80 && a<=89){
+                document.getElementById("result").innerHTML="Grade B+" 
+            }
+            else if(a>=90 && a<=99){
+                document.getElementById("result").innerHTML="Grade A" 
+            }
+            else if(a<=100){
+                document.getElementById("result").innerHTML="Grade A+"     
+            }
+            else if(a >= 100)
+            {
+                document.getElementById("result").innerHTML="Please enter the marks less than or equal to 100" 
+            }
+          }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,190 @@
+<html>
+<head>
+    <title>Employee Salary Calculator</title>
+
+    <style>
+
+        /* body{
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+
+        .box{
+            width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input,select{
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+
+        #result{
+            margin-top: 20px;
+            background-color: #eef;
+            padding: 15px;
+        } */
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h2>Employee Salary Calculator</h2>
+
+        <label>Employee Name</label>
+        <input type="text" id="ename"><br><br>
+
+        <label>Select Department</label>
+
+        <select id="dept">
+            <option value="">--Select--</option>
+            <option value="developer">Developer</option>
+            <option value="tester">Tester</option>
+            <option value="manager">Manager</option>
+            <option value="hr">HR</option>
+        </select><br><br>
+
+        <label>Years of Experience</label>
+        <input type="number" id="exp"><br><br>
+
+        <button onclick="calculateSalary()">Calculate Salary</button><br><br>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+
+        function calculateSalary(){
+
+            let name = document.getElementById("ename").value;
+            let dept = document.getElementById("dept").value;
+            let exp = parseInt(document.getElementById("exp").value);
+
+            let basicSalary = 0;
+            let bonus = 0;
+            let totalSalary = 0;
+
+            switch(dept){
+
+                case "developer":
+
+                    basicSalary = 50000;
+
+                    switch(true){
+
+                        case (exp >= 10):
+                            bonus = 20000;
+                            break;
+
+                        case (exp >= 5):
+                            bonus = 10000;
+                            break;
+
+                        default:
+                            bonus = 5000;
+                    }
+
+                    break;
+
+                case "tester":
+
+                    basicSalary = 40000;
+
+                    switch(true){
+
+                        case (exp >= 8):
+                            bonus = 15000;
+                            break;
+
+                        case (exp >= 4):
+                            bonus = 7000;
+                            break;
+
+                        default:
+                            bonus = 3000;
+                    }
+
+                    break;
+
+                case "manager":
+
+                    basicSalary = 80000;
+
+                    switch(true){
+
+                        case (exp >= 12):
+                            bonus = 30000;
+                            break;
+
+                        case (exp >= 6):
+                            bonus = 15000;
+                            break;
+
+                        default:
+                            bonus = 8000;
+                    }
+
+                    break;
+
+                case "hr":
+
+                    basicSalary = 35000;
+
+                    switch(true){
+
+                        case (exp >= 7):
+                            bonus = 10000;
+                            break;
+
+                        default:
+                            bonus = 4000;
+                    }
+
+                    break;
+
+                default:
+
+                    document.getElementById("result").innerHTML =
+                    "Please Select Department";
+
+                    return;
+            }
+
+            totalSalary = basicSalary + bonus;
+
+            document.getElementById("result").innerHTML =
+
+            "<h3>Employee Details</h3>" +
+            "<b>Name :</b> " + name + "<br><br>" +
+            "<b>Department :</b> " + dept + "<br><br>" +
+            "<b>Experience :</b> " + exp + " Years<br><br>" +
+            "<b>Basic Salary :</b> ₹" + basicSalary + "<br><br>" +
+            "<b>Bonus :</b> ₹" + bonus + "<br><br>" +
+            "<b>Total Salary :</b> ₹" + totalSalary;
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>
+            Task 7
+        </title>
+    </head>
+    <body>
+        <h3>Write a javascript program to accept two integers and display which number is bigger by using if-else statements</h3>
+        <label >Enter First Number  :</label>
+        <input type="number" id="num1"><br><br>
+
+        <label >Enter Second Number : </label>
+        <input type="number" id="num2"><br><br>
+
+        <button onclick="compare()">Compare </button>
+        <h2 id="result"></h2>
+
+        <script>
+            function compare(){
+                a=Number(num1.value)
+                b=Number(num2.value)
+
+                if(a>b){
+                    document.getElementById("result").innerHTML=a +  " is Greater than " +b
+                }
+                else if (a<b){
+                    document.getElementById("result").innerHTML=a+ " is Less than " +b
+                }
+                else if (a==b){
+                    document.getElementById("result").innerHTML=a+ " is Equal to  " +b
+                }
+            }
+        </script>
+    </body>
+</html>
